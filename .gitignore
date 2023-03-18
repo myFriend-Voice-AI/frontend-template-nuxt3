@@ -6,7 +6,5 @@ node_modules
 .output
 .env
 dist
-.DS_Store
-
-# notes
-.notes
+package-lock.json
+pnpm-lock.yaml

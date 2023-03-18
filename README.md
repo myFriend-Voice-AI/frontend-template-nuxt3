@@ -1,29 +1,27 @@
-![Nuxt Template](./cover-dark.webp#gh-dark-mode-only)
-![Nuxt Template](./cover-light.webp#gh-light-mode-only)
+# Nuxt 3 admin template
 
-# Nuxt Template
+## Installation
+```
+# Clone this repository
+git clone https://github.com/WailanTirajoh/nuxt3-admin-template.git
 
-A personal photography portfolio template built with Nuxt.js and Tailwind CSS.
+# Go to directory
+cd nuxt3-admin-template
 
-👀 [Demo](https://nuxt-template.app)
+# Run with npm
+npm install
+npm run dev
 
-📖 Docs (WIP)
+# Or with pnpm
+pnpm install --shamefully-hoist
+pnpm dev
 
-## Features
+# Install Husky
+npx husky install
+```
 
-- Create pages in Markdown in the `content/` directory
-- Use [Tailwind CSS](https://tailwindcss.com/) for styling
-- Use [Tailwind CSS Typography](https://tailwindcss.com/docs/typography-plugin) for typographic styling
-- Pages:
-  - Home/Landing page
-  - List of blog/story posts
-  - List of galleries
-  - Masonry gallery page
-  - Story/blog post page
-  - Hire me page
-  - More coming soon...
-- Switch between Light & Dark mode 🌗
-- Access 100,000 icons from 100+ icon sets with the `<Icon>` component
-- Create **Vue components** and use them in Markdown
-- Deploy on any Node or Static hosting: GH Pages, Vercel, Netlify, Heroku, etc.
-- Live edit on [Nuxt Studio](https://nuxt.studio) (WIP)
+## Preview
+url: https://nuxt3-admin-template.vercel.app
+
+## Docs
+vue3-tailwind docs: https://vue3-tailwind-docs.vercel.app/guide/getting-started.html
