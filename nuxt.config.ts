@@ -30,4 +30,11 @@ export default defineNuxtConfig({
       enabled: false,
     },
   },
+  build: {
+    extend(config, ctx) {
+      if (ctx.isDev) {
+        config.devtool = ctx.isClient ? 'source-map' : 'inline-source-map'
+      }
+    }
+  }
 });
