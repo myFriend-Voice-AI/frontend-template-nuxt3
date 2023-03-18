@@ -1,41 +1,55 @@
+<script setup lang="ts">
+import { useToast, TwFeather, TwToast } from "vue3-tailwind";
+
+useHead({
+  link: [{ rel: "icon", type: "image/x-icon", href: "/icon.png" }],
+  htmlAttrs: {
+    lang: "en",
+  },
+});
+const { toasts } = useToast();
+</script>
+
 <template>
-  <article class="min-h-screen flex flex-col items-stretch">
-    
-    <!-- ring -->
-    <div class="fixed inset-0 flex justify-center sm:px-8">
-      <div class="flex w-full max-w-7xl lg:px-8">
+  <div>
+    <TwToast position="bottom-right" :toasts="toasts" />
+    <div>
+      <LayoutFloating />
+      <LayoutHeader />
+      <div class="py-4 px-0 md:px-1">
         <div
-          class="w-full bg-white ring-1 ring-zinc-200/50 dark:bg-zinc-900 dark:ring-zinc-500/20"
-        />
+          class="flex min-h-screen text-sky-900 dark:text-gray-200 bg-opacity-40 bg-gray-900 rounded-3xl shadow-lg"
+        >
+          <LayoutSidebar class="h-full" />
+          <div
+            class="w-full md:w-[calc(100%-8rem)] lg:w-[calc(100%-16rem)] sm:rounded-l-none"
+          >
+            <div class="p-4 bg-gray-100 dark:bg-gray-900 h-full rounded-3xl">
+              <slot />
+            </div>
+          </div>
+        </div>
+        <div class="px-6 md:px-11">
+          <div
+            class="w-full bg-gray-900 shadow-xl bg-opacity-60 rounded-b-2xl h-4"
+          ></div>
+        </div>
+      </div>
+      <div
+        class="text-center flex items-center gap-1 justify-center text-gray-200"
+      >
+        Developed with
+        <TwFeather class="text-red-500" type="heart" /> By
+        <a
+          class="text-blue-300"
+          href="https://github.com/WailanTirajoh"
+          target="_blank"
+        >
+          Wailan
+        </a>
       </div>
     </div>
-
-    <!-- background -->
-    <Container class="relative">
-      <div class="absolute top-0 right-0">
-        <NuxtImg
-          src="img/bg-glow.png"
-          aria-hidden="true"
-          class="w-[44rem]"
-          format="webp"
-          width="944"
-          height="586"
-        />
-      </div>
-    </Container>
-    
-    <!-- header -->
-    <Header />
-    
-    <!-- main -->
-    <main class="template-prose">
-      <Container>
-        <slot />
-      </Container>
-    </main>
-
-    <!-- footer -->
-    <Footer class="mt-auto" />
-  
-  </article>
+  </div>
 </template>
+
+<style></style>

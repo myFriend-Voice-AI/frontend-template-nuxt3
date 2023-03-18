@@ -1,1 +1,0 @@
-export const CHATGPT_API_KEY = "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";
