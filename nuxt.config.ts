@@ -4,6 +4,9 @@ export default defineNuxtConfig({
   /**
    * Nuxt.js modules
    */
+  imports: {
+    dirs: ['stores'],
+  },
   modules: [
     // Doc: https://tailwindcss.nuxtjs.org/
     "@nuxtjs/tailwindcss",
@@ -22,8 +25,27 @@ export default defineNuxtConfig({
 
     // Doc: https://github.com/nuxt-modules/icon
     "nuxt-icon",
+    
+    // Doc: https://pinia.vuejs.org/ssr/nuxt.html
+    // [
+    //   '@pinia/nuxt',
+    //   {
+    //     autoImports: ['defineStore', 'acceptHMRUpdate'],
+    //   },
+    // ],
+    ['@pinia/nuxt'],
   ],
-
+  pinia: {
+    autoImports: [
+      // automatically imports `defineStore`
+      'defineStore', // import { defineStore } from 'pinia'
+      ['defineStore', 'definePiniaStore'], // import { defineStore as definePiniaStore } from 'pinia'
+      'acceptHMRUpdate',
+    ],
+  },
+  alias: {
+    pinia: "/node_modules/@pinia/nuxt/node_modules/pinia/dist/pinia.mjs"
+  },
   /**
    * <link rel="preconnect" href="https://fonts.googleapis.com">
    * <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,7 +69,6 @@ export default defineNuxtConfig({
       ],
     },
   },
-
   content: {
     // https://content.nuxtjs.org/api/configuration
     documentDriven: true,
@@ -63,4 +84,8 @@ export default defineNuxtConfig({
   tailwindcss: {
     cssPath: "./assets/css/tailwind.css",
   },
+  plugins: [
+    '~/plugins/parallax/index.ts'    
+  ],
+  
 });
