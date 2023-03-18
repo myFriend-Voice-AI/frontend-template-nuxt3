@@ -8,6 +8,13 @@ export default [
   },
   {
     isTitle: false,
+    name: "Chat",
+    url: "/components/chat",
+    icon: "home",
+    submenu: [],
+  },
+  {
+    isTitle: false,
     name: "Dashboard",
     url: "/",
     icon: "home",

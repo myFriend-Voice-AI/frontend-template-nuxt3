@@ -18,7 +18,7 @@ const logout = () => {
     <div
       class="h-14 flex justify-between md:justify-center items-center w-full md:w-52 px-4"
     >
-      <div class="font-bold">NuxiAdmin</div>
+      <div class="font-bold">My Friend</div>
       <button
         class="block md:hidden float-right"
         @click="sidebarStore.mobileOpen = !sidebarStore.mobileOpen"
